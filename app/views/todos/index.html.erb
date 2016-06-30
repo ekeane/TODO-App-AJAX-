@@ -1,0 +1,36 @@
+<h1> TODO </h1>
+<h2>  The Todo List you always wanted but didnt know you had </h2>
+
+<%= form_for Todo.new do |f| %>
+ <div class="input-group" class = "form-control" aria-describedby="basic-addon1" >
+    <%= f.text_field :description, placeholder:
+    "whatta ya need to do?" %>
+  </div>
+
+  <div class="input-group">
+    <%= f.number_field :priority, placeholder: "priority level" %>
+  </div>
+
+ <div class="input-group" class="btn btn-default">
+ <button class="btn btn-default"> <%= f.submit %> </button>
+  </div>
+<% end %>
+
+<ul>
+<% @todos.each do |todo| %>
+  <li>
+    <%= todo.description %><br>
+    <strong>Priority: </strong><%= todo.priority %><br>
+    <%= link_to "DONE", todo_path(todo), method: 'delete' %>
+  </li>
+<% end %>
+</ul>
+
+  <div>
+    <h3>  Priority Levels:   </h3>
+      <p>  1 = don't worry about it </p>
+      <p>  2 =  kinda important </p>
+      <p>  3 = important  </p>
+      <p>  4 = pretty important </p>
+      <p>  5 = GET THIS DONE!! </p>
+  </div>

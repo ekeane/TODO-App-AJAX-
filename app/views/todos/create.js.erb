@@ -1,0 +1,4 @@
+ var html = "<li><%= @todo.description %><br><strong> Priority: </strong> <%= @todo.priority %><br><%= escape_javascript link_to 'DONE', todo_path(@todo), method: 'delete' %></li>";
+
+ $('ul').append(html);
+
