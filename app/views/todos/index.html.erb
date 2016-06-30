@@ -1,36 +1,73 @@
-<h1> TODO </h1>
-<h2>  The Todo List you always wanted but didnt know you had </h2>
+<div class = "row"> 
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">TODO List</a>
+            </div>
+          </div>
 
-<%= form_for Todo.new do |f| %>
- <div class="input-group" class = "form-control" aria-describedby="basic-addon1" >
-    <%= f.text_field :description, placeholder:
-    "whatta ya need to do?" %>
-  </div>
 
-  <div class="input-group">
-    <%= f.number_field :priority, placeholder: "priority level" %>
-  </div>
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about"> The todo list you always wanted but never had</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
 
- <div class="input-group" class="btn btn-default">
- <button class="btn btn-default"> <%= f.submit %> </button>
-  </div>
-<% end %>
+        <!-- /.container-fluid --> 
+    </nav>
+</div>
 
-<ul>
-<% @todos.each do |todo| %>
-  <li>
-    <%= todo.description %><br>
-    <strong>Priority: </strong><%= todo.priority %><br>
-    <%= link_to "DONE", todo_path(todo), method: 'delete' %>
-  </li>
-<% end %>
-</ul>
+<br>
+<br>
+<br>
+<br>
+<div class = "jumbotron">
 
-  <div>
-    <h3>  Priority Levels:   </h3>
-      <p>  1 = don't worry about it </p>
-      <p>  2 =  kinda important </p>
-      <p>  3 = important  </p>
-      <p>  4 = pretty important </p>
-      <p>  5 = GET THIS DONE!! </p>
-  </div>
+  <div class = "container">
+    <div class = "col-md-4">
+  
+      <%= form_for Todo.new do |f| %>
+       <div class="input-group" class = "form-control" aria-describedby="basic-addon1" >
+          <%= f.text_field :description, placeholder:
+          "whatta ya need to do?" %>
+        </div>
+
+        <div class="input-group">
+          <%= f.number_field :priority, placeholder: "priority level" %>
+        </div>
+
+       <div class="input-group" class="btn btn-default">
+       <button class="btn btn-default"> <%= f.submit %> </button>
+        </div>
+      <% end %>
+
+      <ul>
+      <% @todos.each do |todo| %>
+        <li>
+          <%= todo.description %><br>
+          <strong>Priority: </strong><%= todo.priority %><br>
+          <%= link_to "DONE", todo_path(todo), method: 'delete' %>
+        </li>
+      <% end %>
+      </ul>
+
+      <div>
+        <h3>  Priority Levels:   </h3>
+          <p>  1 = don't worry about it </p>
+          <p>  2 =  kinda important </p>
+          <p>  3 = important  </p>
+          <p>  4 = pretty important </p>
+          <p>  5 = GET THIS DONE!! </p>
+      </div>
+    </div>
+
+  </div>  
+</div>

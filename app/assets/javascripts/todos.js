@@ -8,12 +8,18 @@ $(function(){
    var priority = $(this).find('#todo_priority').val();
    var data = $(this).serializeArray();
 
+
     $.ajax({
       method: method,
       url: action,
       data: data,
       dataType: 'script'
+      success: function(data){
+           $(data).remove(); 
+      }
+
     });
     
   });
+  return false;
 });

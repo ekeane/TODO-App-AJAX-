@@ -14,3 +14,19 @@
  *= require_self
  */
 
+.col-md-4 {
+
+color: black;
+position: fixed; /* or absolute */
+  top: 50%;
+  left: 40%;
+
+}
+
+#bs-example-navbar-collapse-1 {
+
+color: black;
+
+
+}
+
